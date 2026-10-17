@@ -1,0 +1,254 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	min-height: 100vh;
+	background-color: #222222;
+	color: white;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.calculadora{
+	
+	width: min(400px, 100%);
+	min-height: 500px;
+  height: auto;
+	border: 1px solid white;
+	border-radius: 30px;
+	background-color:  #3f3f3f;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
+}
+
+.visor{
+	margin: 15px;
+	padding: 30px;
+	background-color: white;
+	border-radius: 30px;
+	color: black;
+	font-size: 20px;
+}
+
+.teclado{
+	display: flex;
+	padding: 30px;
+	margin: 15px;
+	border: 1px solid #8A9AAA;
+	border-radius: 30px;
+	height: 360px;
+	
+}
+.tecladoNumerico{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	width: 75%;
+	margin-right: 15px;
+}
+.tecladoOperadores{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	width: 17%;
+}
+
+
+.botao{
+  text-align: center;
+  padding: 10px;
+
+
+	width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+
+	color: #e5e7eb;
+	background: linear-gradient(145deg, #343941, #252930);
+
+	/* efeito 3D */
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.50),
+    -6px -6px 14px rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* HOVER */
+.botao:hover {
+  transform: translateY(-3px) scale(1.04);
+
+  background: linear-gradient(145deg, #41464f, #2d3138);
+
+  box-shadow:
+    10px 10px 20px rgba(0, 0, 0, 0.55),
+    -7px -7px 16px rgba(255, 255, 255, 0.12),
+    0 0 12px rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+}
+
+/* CLICK */
+.botao:active {
+  transform: translateY(1px) scale(0.97);
+
+  background: linear-gradient(145deg, #252930, #343941);
+
+  box-shadow:
+    inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.06);
+}
+
+
+.botaoEspecias{
+  text-align: center;
+	border: 1px solid #0B3D91;
+	padding: 4px;
+	border-radius: 100%;
+	background-color: #1877F2;
+	color: #ffffff;
+
+	/* Fundo */
+	background: linear-gradient(
+    145deg,
+    #0e4aa8,
+    #083276
+  );
+
+	 /* Efeito 3D */
+  box-shadow:
+    8px 8px 16px rgba(3, 24, 58, 0.55),
+    -6px -6px 14px rgba(40, 110, 200, 0.25),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* HOVER */
+.botaoEspecias:hover {
+  transform: translateY(-3px) scale(1.04);
+
+  background: linear-gradient(
+    145deg,
+    #1254b8,
+    #0B3D91
+  );
+
+  border-color: #1b5fc4;
+
+  box-shadow:
+    10px 10px 20px rgba(3, 24, 58, 0.60),
+    -7px -7px 16px rgba(50, 130, 220, 0.30),
+    0 0 14px rgba(11, 61, 145, 0.35);
+
+  color: #ffffff;
+}
+
+
+/* CLICK */
+.botaoEspecias:active {
+  transform: translateY(1px) scale(0.97);
+
+  background: linear-gradient(
+    145deg,
+    #083276,
+    #0e4aa8
+  );
+
+  box-shadow:
+    inset 5px 5px 10px rgba(3, 24, 58, 0.55),
+    inset -4px -4px 8px rgba(50, 130, 220, 0.15);
+
+  border-color: #083276;
+}
+#apagar{
+	
+	background: #0B3D91;
+	border: 1px solid #0B3D91;
+}
+#apagar:hover {
+    background: linear-gradient(145deg, #42a5f5, #1976d2);
+}
+
+
+/* RESPONSIVIDADE — SEM ALTERAR O DESIGN ORIGINAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 12px;
+}
+
+main {
+    width: 100%;
+    min-width: 0;
+}
+
+.calculadora {
+    max-width: 100%;
+}
+
+.teclado {
+    min-width: 0;
+}
+
+.tecladoNumerico,
+.tecladoOperadores {
+    min-width: 0;
+}
+
+.botao,
+.botaoEspecias {
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Telemóveis */
+@media (max-width: 420px) {
+    .calculadora {
+        width: 100%;
+    }
+
+    .teclado {
+        padding: 16px;
+        margin: 10px;
+        gap: 10px;
+    }
+
+    .tecladoNumerico {
+        width: 75%;
+        margin-right: 10px;
+        gap: 8px;
+    }
+
+    .tecladoOperadores {
+        width: 17%;
+        gap: 8px;
+    }
+
+    .botao,
+    .botaoEspecias {
+        font-size: 16px;
+    }
+}
